@@ -1,0 +1,77 @@
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos temporários
+*.tmp
+*.swp
+*.swo
+
+# Ignorar arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de banco de dados temporários
+*.sql~
+
+# Ignorar arquivos do IDE
+.vscode/
+.idea/
+
+# Ignorar arquivos de backup
+*.bak
+*.sql.bak
+
+Projeto 9: Sistema de Gerenciamento de Restaurante
+
+Descrição:
+
+Desenvolva um sistema para gerenciar as operações de um restaurante. O sistema deve permitir o gerenciamento de clientes, mesas e pedidos. Utilize comandos SQL para implementar o banco de dados necessário para suportar as seguintes funcionalidades:
+
+Criar o Banco de Dados:
+
+Nomeie o banco de dados como RestauranteDB.
+
+Criar as Tabelas:
+
+Clientes: Crie uma tabela para armazenar informações dos clientes com os seguintes campos:
+id_cliente (chave primária, inteiro, auto-incremento)
+nome (texto)
+telefone (texto)
+email (texto)
+
+Mesas: Crie uma tabela para gerenciar as mesas do restaurante com os seguintes campos:
+id_mesa (chave primária, inteiro, auto-incremento)
+numero_mesa (inteiro)
+capacidade (inteiro)
+
+Pedidos: Crie uma tabela para armazenar informações sobre os pedidos com os seguintes campos:
+id_pedido (chave primária, inteiro, auto-incremento)
+id_cliente (chave estrangeira referenciando Clientes.id_cliente)
+id_mesa (chave estrangeira referenciando Mesas.id_mesa)
+data_pedido (data e hora)
+total (decimal)
+
+Itens_Pedido: Crie uma tabela para gerenciar os itens de cada pedido com os seguintes campos:
+id_item (chave primária, inteiro, auto-incremento)
+id_pedido (chave estrangeira referenciando Pedidos.id_pedido)
+descricao_item (texto)
+quantidade (inteiro)
+preco_unitario (decimal)
+
+Inserir Dados:
+Adicione alguns registros fictícios às tabelas Clientes, Mesas, Pedidos, e Itens_Pedido.
+
+Consultar Dados:
+Escreva consultas para listar todos os clientes, mesas e pedidos. Além disso, crie uma consulta para mostrar todos os itens de um pedido específico, incluindo o total do pedido.
+
+Atualizar Dados:
+Atualize as informações de um cliente e de uma mesa. Certifique-se de que as atualizações sejam refletidas corretamente em todas as tabelas relacionadas.
+
+Deletar Dados:
+Exclua um pedido e todos os itens relacionados a ele. Certifique-se de que a exclusão de um pedido remova os itens associados sem deixar dados órfãos.
+
+Objetivos:
+1. Utilizar comandos SQL para criar e manipular um banco de dados funcional.
+2. Garantir a integridade referencial entre as tabelas.
+3. Implementar consultas para obter e visualizar informações relevantes.
+4. Praticar a atualização e exclusão de dados enquanto mantém a integridade do banco de dados.
