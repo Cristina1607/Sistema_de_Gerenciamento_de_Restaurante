@@ -1,0 +1,79 @@
+# Sistema de Gerenciamento de Restaurante
+
+## Descrição
+
+O "Sistema de Gerenciamento de Restaurante" é um projeto que permite o gerenciamento eficiente das operações de um restaurante. O sistema é desenvolvido utilizando SQL e inclui funcionalidades para gerenciar clientes, mesas e pedidos. 
+
+## Funcionalidades
+
+- **Clientes**: Cadastro e gerenciamento de informações dos clientes.
+- **Mesas**: Gerenciamento das mesas do restaurante, incluindo número e capacidade.
+- **Pedidos**: Registro e gerenciamento de pedidos, associando-os a clientes e mesas.
+- **Itens do Pedido**: Detalhamento dos itens presentes em cada pedido, incluindo descrição, quantidade e preço unitário.
+
+## Estrutura do Banco de Dados
+
+O banco de dados é composto pelas seguintes tabelas:
+
+1. **Clientes**
+   - `id_cliente` (INT, PK, AUTO_INCREMENT)
+   - `nome` (VARCHAR(100))
+   - `telefone` (VARCHAR(20))
+   - `email` (VARCHAR(100))
+
+2. **Mesas**
+   - `id_mesa` (INT, PK, AUTO_INCREMENT)
+   - `numero_mesa` (INT)
+   - `capacidade` (INT)
+
+3. **Pedidos**
+   - `id_pedido` (INT, PK, AUTO_INCREMENT)
+   - `id_cliente` (INT, FK)
+   - `id_mesa` (INT, FK)
+   - `data_pedido` (DATETIME)
+   - `total` (DECIMAL(10, 2))
+
+4. **Itens_Pedido**
+   - `id_item` (INT, PK, AUTO_INCREMENT)
+   - `id_pedido` (INT, FK)
+   - `descricao_item` (TEXT)
+   - `quantidade` (INT)
+   - `preco_unitario` (DECIMAL(10, 2))
+
+## Comandos Utilizados
+
+- `CREATE DATABASE`
+- `CREATE TABLE`
+- `INSERT INTO`
+- `SELECT`
+- `UPDATE`
+- `DELETE`
+- `JOIN`
+
+## Passos para Uso
+
+1. **Criação do Banco de Dados**:
+   - Execute o script para criar o banco de dados e tabelas necessárias.
+
+2. **Inserção de Dados**:
+   - Insira dados fictícios nas tabelas `Clientes`, `Mesas`, `Pedidos`, e `Itens_Pedido` usando os comandos `INSERT`.
+
+3. **Consultas**:
+   - Utilize as consultas fornecidas para listar todos os clientes, mesas e pedidos. Consulte também os itens de um pedido específico e o total do pedido.
+
+4. **Atualizações**:
+   - Atualize as informações de um cliente e de uma mesa conforme necessário.
+
+5. **Exclusões**:
+   - Exclua pedidos e clientes conforme necessário, garantindo que os itens do pedido sejam removidos adequadamente.
+
+## Objetivos
+
+- Utilizar comandos SQL para criar e manipular um banco de dados funcional.
+- Garantir a integridade referencial entre as tabelas.
+- Implementar consultas para obter e visualizar informações relevantes.
+- Praticar a atualização e exclusão de dados enquanto mantém a integridade do banco de dados.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
